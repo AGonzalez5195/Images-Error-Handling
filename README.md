@@ -1,52 +1,62 @@
-# Unit 3 Project 2 - Getting Data from Online
+Pursuit-Core-iOS-Images-Lab
 
-## Summary
+1. xkcd comic Viewer
 
-Create an app where you can search for a tv show.  Selecting a show should display a list of all episodes in the TV show.  Selecting an episode should display a detail view controller with more information about the episode.
+Documentation
 
-![Sample gif](https://github.com/C4Q/AC-iOS-EpisodesFromOnline-HW/blob/master/gif1.gif)
+ 
 
-## Documentation:
+Create an app with a single screen with a:
 
-[https://www.tvmaze.com/api](https://www.tvmaze.com/api)
+UIImageVIew
+Stepper
+TextField
+Two Buttons ("Most recent" and "Random") 
+The image view should display an xkcd comic.
+Changing the stepper value up or down should display the comic from the next or previous day.
+The user should be able to type a number into the textField to go to that numbered comic.
+The "Most recent" button should go to the most recent comic.
+The "Random" button should go to a random comic.
+The text field and stepper should update accordingly whenever the comic changes.
+ 
 
-# View Controller One: Shows
+2. Pokemon Cards
 
-Your view controller should contain:
+Documentation
 
-- A table view
-- A search bar
+ 
 
-Entering a search term should make a request to load shows matching that description into the table view.  Your tableViewCell should have:
+Create an app with a viewController with a table view that segues to a detail view controller.
 
-- An image of the show
-- The name of the show
-- Its rating
+The first view controller should have a:
 
-You will need to use a custom tableViewCell.
+Search Bar
+Table View
+Searching for a card will load new data matching the description.  The table view should only should the images for the cards.  Selecting a pokemon card should segue to a detail view controller with:
 
-Selecting a show should segue to a view controller that lists the episodes.
+A high-res image
+Its name
+Its types
+Its weaknesses
+Its set
+3. Random User API
 
-# View Controller Two: Episodes
+Documentation
 
-Your view controller should contain:
+ 
 
-- A table view
+Create an app with a table view controller and a detail view controller.
 
-The table view should have all the episodes from the show that the user selected.  The tableViewCell should have:
+The tableview controller (or UIViewController with a tableView) should load a list of random people.  Use a custom tableView cell that contains their:
 
-- An image of the episode
-- The name of the episode
-- The season and episode number
+Profile picture (thumbnail),
+Name
+Age
+Cell phone number
+Selecting a cell should segue to a detail view controller that has their:
 
-Selecting an episode should segue to a detail view controller that lists additional information.
-
-# View Controller Three: Episode Detail
-
-Your view controller should contain:
-
-- A large image of the episode
-- The episode's name
-- The episode's season and episode number
-- The episode's description
-
+Large Image
+Name
+Age
+All phone numbers
+Location
