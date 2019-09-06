@@ -50,7 +50,3 @@ Your view controller should contain:
 - The episode's season and episode number
 - The episode's description
 
-
-# Rubric
-
-![rubric](rubric.png)
