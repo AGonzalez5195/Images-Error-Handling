@@ -8,13 +8,21 @@
 
 import Foundation
 
-
-
-// MARK: - XKCDComic
 struct xkcdComic: Codable {
     let img: String
+    let safe_title: String
+    let num: Int
+    
     init() { //Required so that the code can compile without the "cannot invoke initializer with no arguments" error
         img = String()
+        safe_title = String()
+        num = Int()
+        
+        enum CodingKeys: String, CodingKey {
+            case safeTitle = "safe_title"
+            case img
+            case num
+        }
     }
     
     static func getXKCDData(completionHandler: @escaping (Result<xkcdComic,AppError>) -> () ) {
