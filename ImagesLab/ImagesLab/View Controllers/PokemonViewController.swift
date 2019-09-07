@@ -12,28 +12,12 @@ class PokemonViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var pokemonCard = [Card]() {
+    var pokemonCards = [Card]() {
         didSet{
             tableView.reloadData()
         }
     }
-    
-//    private func loadData() {
-//        PokemonAPI.shared.fetchDataForAnyURL(url: "https://api.pokemontcg.io/v1/cards?contains=types")  { (result) in
-//            switch result {
-//            case .failure(let error):
-//                print(error)
-//            case .success(let data):
-//                do {
-//                    self.pokemonCard = try Pokemon.getPokemon(from: data)
-//                    DispatchQueue.main.sync {
-//                        self.tableView.reloadData()
-//                    }
-//                } catch {fatalError("\(error)")}
-//            }
-//        }
-//    }
-    
+
     private func loadData(){
         Pokemon.getPokemonCardData { (result) in
             DispatchQueue.main.async {
@@ -41,7 +25,8 @@ class PokemonViewController: UIViewController {
                 case .failure(let error):
                     print(error)
                 case .success(let pokemonData):
-                    self.pokemonCard = pokemonData
+                    self.pokemonCards = pokemonData
+                    self.pokemonCards = Card.sortByNameAscending(arr: self.pokemonCards)
                 }
             }
         }
@@ -54,7 +39,7 @@ class PokemonViewController: UIViewController {
         case "segueToDetail":
             guard let destVC = segue.destination as? detailPokemonViewController else { fatalError("Unexpected segue VC") }
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else { fatalError("No row selected") }
-            let currentPokemonCard = pokemonCard[selectedIndexPath.row]
+            let currentPokemonCard = pokemonCards[selectedIndexPath.row]
             destVC.pokemonCard = currentPokemonCard
         default:
             fatalError("unexpected segue identifier")
@@ -72,17 +57,17 @@ class PokemonViewController: UIViewController {
 
 extension PokemonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokemonCard.count
+        return pokemonCards.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentPokemonCard = pokemonCard[indexPath.row]
+        let currentPokemonCard = pokemonCards[indexPath.row]
         let pokemonCell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as! PokemonTableViewCell
         
         pokemonCell.pokemonName.text = currentPokemonCard.name
-        pokemonCell.weaknessesLabel.text = currentPokemonCard.weaknesses?[0].type
         
-        ImageHelper.shared.fetchImage(urlString: currentPokemonCard.imageURLHiRes) { (result) in
+        ImageHelper.shared.fetchImage(urlString: currentPokemonCard.imageURL) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
@@ -98,6 +83,29 @@ extension PokemonViewController: UITableViewDataSource {
 
 extension PokemonViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 240
     }
 }
+
+
+
+
+
+
+
+
+//    private func loadData() {
+//        PokemonAPI.shared.fetchDataForAnyURL(url: "https://api.pokemontcg.io/v1/cards?contains=types")  { (result) in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let data):
+//                do {
+//                    self.pokemonCard = try Pokemon.getPokemon(from: data)
+//                    DispatchQueue.main.sync {
+//                        self.tableView.reloadData()
+//                    }
+//                } catch {fatalError("\(error)")}
+//            }
+//        }
+//    }

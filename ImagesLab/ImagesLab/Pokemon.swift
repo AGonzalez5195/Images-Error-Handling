@@ -35,29 +35,48 @@ struct Pokemon: Codable {
     }
     
     
-//    static func getPokemon(from data: Data) throws -> [Card] {
-//        do {
-//            let PokemonData = try JSONDecoder().decode(Pokemon.self, from: data)
-//            return PokemonData.cards
-//        } catch {
-//            throw JSONError.decodingError(error)
-//        }
-//    }
+    //    static func getPokemon(from data: Data) throws -> [Card] {
+    //        do {
+    //            let PokemonData = try JSONDecoder().decode(Pokemon.self, from: data)
+    //            return PokemonData.cards
+    //        } catch {
+    //            throw JSONError.decodingError(error)
+    //        }
+    //    }
 }
 
 struct Card: Codable {
     let name: String
+    let types: [String]
     //    let nationalPokedexNumber: Int?
-    let imageURLHiRes: String
+    let imageURL, imageURLHiRes: String
     let weaknesses: [Weakness]?
+    let set: String
     
     enum CodingKeys: String, CodingKey {
         case name
+        case imageURL = "imageUrl"
         case imageURLHiRes = "imageUrlHiRes"
         case weaknesses
+        case set
+        case types
+    }
+    
+    static func sortByNameAscending(arr: [Card]) -> [Card] {
+        var newArr = arr
+        newArr = arr.sorted(by: {$0.name < $1.name})
+        return newArr
+    }
+    
+    func displayPokemonWeakness(card: Card) -> String {
+        return "Weakness: \(card.weaknesses?[0].type ?? "None")"
     }
 }
 
+
 struct Weakness: Codable {
-    let type: String
+    var type: String
 }
+
+
+

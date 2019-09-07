@@ -10,31 +10,31 @@ import Foundation
 
 class PokemonAPIHelper{
     private init () {}
-
+    
     static let shared = PokemonAPIHelper()
-
-
+    
+    
     func getPokemonCards(completionHandler: @escaping (Result<Pokemon, Error>) -> Void){
-
-        let urlStr = "https://api.pokemontcg.io/v1/cards?contains=weaknesses"
-
+        
+        let urlStr = "https://api.pokemontcg.io/v1/cards?supertype=Pokémon"
+        
         guard let url = URL(string: urlStr) else {
             completionHandler(.failure(ErrorHandling.badURL))
             return
         }
-
-
+        
+        
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             guard error == nil else {
                 completionHandler(.failure(ErrorHandling.noData))
                 return
             }
-
+            
             guard let data = data else {
                 completionHandler(.failure(ErrorHandling.noData))
                 return
             }
-
+            
             do {
                 let pokemonCardData = try JSONDecoder().decode(Pokemon.self, from: data)
                 
@@ -43,15 +43,11 @@ class PokemonAPIHelper{
             catch {
                 completionHandler(.failure(ErrorHandling.decodingError))
             }
-
-
-
+            
             }.resume()
-
-
+        
     }
-
-
+    
 }
 
 

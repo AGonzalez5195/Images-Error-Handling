@@ -97,52 +97,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fnG-ty-WWy">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokemonCell" rowHeight="130" id="hYr-N0-BU2" customClass="PokemonTableViewCell" customModule="ImagesLab" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="130"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokemonCell" rowHeight="240" id="hYr-N0-BU2" customClass="PokemonTableViewCell" customModule="ImagesLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hYr-N0-BU2" id="M4u-qK-tC0">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="129.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="239.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJV-zb-2Eu">
-                                                    <rect key="frame" x="20" y="54" width="166" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pb-Wv-CSZ">
-                                                    <rect key="frame" x="20" y="83" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzC-Wa-OOS">
-                                                    <rect key="frame" x="194" y="0.0" width="174" height="128"/>
+                                                    <rect key="frame" x="135" y="5" width="144" height="228"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJV-zb-2Eu">
+                                                    <rect key="frame" x="7" y="109" width="120" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="pokemonCardImage" destination="wzC-Wa-OOS" id="Chy-bx-7tm"/>
                                             <outlet property="pokemonName" destination="mJV-zb-2Eu" id="vrt-gr-ds7"/>
-                                            <outlet property="weaknessesLabel" destination="5pb-Wv-CSZ" id="NsD-bv-ZfO"/>
                                             <segue destination="hj8-jc-dhi" kind="show" identifier="segueToDetail" id="5uH-4N-QaP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eSm-NJ-lwv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fnG-ty-WWy" firstAttribute="top" secondItem="WED-az-lkT" secondAttribute="top" id="bjV-IM-ePJ"/>
+                            <constraint firstItem="eSm-NJ-lwv" firstAttribute="leading" secondItem="WED-az-lkT" secondAttribute="leading" id="Vw2-2N-znF"/>
+                            <constraint firstItem="eSm-NJ-lwv" firstAttribute="top" secondItem="WED-az-lkT" secondAttribute="top" id="b4U-YM-bz2"/>
                             <constraint firstItem="WED-az-lkT" firstAttribute="trailing" secondItem="fnG-ty-WWy" secondAttribute="trailing" id="g0B-Ow-LMl"/>
+                            <constraint firstItem="WED-az-lkT" firstAttribute="trailing" secondItem="eSm-NJ-lwv" secondAttribute="trailing" id="gCg-NR-2cw"/>
                             <constraint firstItem="fnG-ty-WWy" firstAttribute="leading" secondItem="WED-az-lkT" secondAttribute="leading" id="rlL-JK-RVn"/>
+                            <constraint firstItem="eSm-NJ-lwv" firstAttribute="centerX" secondItem="WED-az-lkT" secondAttribute="centerX" id="twV-6w-h3n"/>
                             <constraint firstItem="WED-az-lkT" firstAttribute="bottom" secondItem="fnG-ty-WWy" secondAttribute="bottom" id="xUs-p3-e2T"/>
+                            <constraint firstItem="fnG-ty-WWy" firstAttribute="top" secondItem="eSm-NJ-lwv" secondAttribute="bottom" id="y5e-oO-V3L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WED-az-lkT"/>
                     </view>
@@ -164,18 +164,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weaknesses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mto-a0-ta0">
-                                <rect key="frame" x="38" y="622" width="338" height="62"/>
+                                <rect key="frame" x="38" y="724" width="338" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xj-ML-Z7x">
-                                <rect key="frame" x="73" y="135" width="268" height="386"/>
+                                <rect key="frame" x="38" y="101" width="338" height="545"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EE-9n-1ze">
+                                <rect key="frame" x="29" y="695" width="356" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbS-2K-ZNH">
+                                <rect key="frame" x="38" y="772" width="338" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BQ-hT-Y0r">
-                                <rect key="frame" x="20" y="529" width="374" height="63"/>
+                                <rect key="frame" x="20" y="643" width="374" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -188,6 +202,8 @@
                     <connections>
                         <outlet property="cardImage" destination="7xj-ML-Z7x" id="shZ-r2-axs"/>
                         <outlet property="nameLabel" destination="9BQ-hT-Y0r" id="Ea6-hZ-K7Q"/>
+                        <outlet property="setLabel" destination="jbS-2K-ZNH" id="ZW5-9U-tZn"/>
+                        <outlet property="typeLabel" destination="3EE-9n-1ze" id="tKI-LX-bGW"/>
                         <outlet property="weaknessLabel" destination="mto-a0-ta0" id="C1I-5h-r9p"/>
                     </connections>
                 </viewController>
@@ -213,11 +229,11 @@
             </objects>
             <point key="canvasLocation" x="-342" y="482"/>
         </scene>
-        <!--Item-->
+        <!--Pokémon-->
         <scene sceneID="Q5K-r8-3Hg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6OM-Bb-3Ju" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="PUU-EV-SmJ"/>
+                    <tabBarItem key="tabBarItem" title="Pokémon" id="PUU-EV-SmJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="knX-SE-fLu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
