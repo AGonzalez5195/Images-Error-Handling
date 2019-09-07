@@ -10,15 +10,16 @@ import Foundation
 
 struct xkcdComic: Codable {
     let img: String
-    let safe_title: String
     let num: Int
+    let safe_title: String
     let mostRecentComic = "https://xkcd.com/info.0.json"
     
     init() { //Required so that the code can compile without the "cannot invoke initializer with no arguments" error
         img = String()
-        safe_title = String()
         num = Int()
+        safe_title = String()
     }
+    //CodingKeys enum doesn't work with an init?
     
     static func getxkcdComic(ComicURL: String, completionHandler: @escaping (Result<xkcdComic,AppError>) -> () ) {
         
@@ -41,12 +42,8 @@ struct xkcdComic: Codable {
     func getASpecificComic(number: Int) -> String{
         return "https://xkcd.com/\(number)/info.0.json"
     }
+    
+    func getASpecificComicFromStepper(number:Double) -> String {
+        return "https://xkcd.com/\(Int(number))/info.0.json"
+    }
 }
-
-//What I want to do:
-//Take a user input from a textfield, make sure it's an int, and return the url with that string interpolated into the URL.
-//Take a range between 1 and the most recent comic number
-//When the user presses the randomize button, use a random element from within that range and interpolate it into the URL.
-//I need a function that can get a comic for any URL.
-
-

@@ -9,7 +9,6 @@
 import Foundation
 
 extension String {
-    
     func toInt() -> Int? {
         return NumberFormatter().number(from: self)?.intValue
     }

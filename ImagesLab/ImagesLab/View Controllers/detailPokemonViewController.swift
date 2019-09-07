@@ -10,7 +10,7 @@
 import UIKit
 
 class detailPokemonViewController: UIViewController {
-
+    
     var pokemonCard: Card!
     
     @IBOutlet weak var weaknessLabel: UILabel!
@@ -19,14 +19,8 @@ class detailPokemonViewController: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var cardImage: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setLabelText()
-        setCardImage()
-    }
-    
     private func setLabelText() {
-       nameLabel.text = pokemonCard.name
+        nameLabel.text = pokemonCard.name
         weaknessLabel.text = pokemonCard.displayPokemonWeakness(card: pokemonCard)
         setLabel.text = "\(pokemonCard.set) Set"
         typeLabel.text = "\(pokemonCard.types[0]) type"
@@ -43,5 +37,11 @@ class detailPokemonViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setLabelText()
+        setCardImage()
     }
 }

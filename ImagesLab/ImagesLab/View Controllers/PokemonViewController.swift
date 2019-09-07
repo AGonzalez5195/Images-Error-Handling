@@ -9,12 +9,11 @@
 import UIKit
 
 class PokemonViewController: UIViewController {
-    
+    //MARK: -- Outlets
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
+    //MARK: -- Properties
     var pokemonCards = [Card]() {
         didSet{
             tableView.reloadData()
@@ -31,6 +30,7 @@ class PokemonViewController: UIViewController {
     
     var searchString: String? = nil { didSet { self.tableView.reloadData()} }
     
+    //MARK: -- Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueIdentifer = segue.identifier else {fatalError("No identifier in segue")}
         
@@ -45,7 +45,6 @@ class PokemonViewController: UIViewController {
         }
     }
     
-
     private func loadData(){
         Pokemon.getPokemonCardData { (result) in
             DispatchQueue.main.async {
@@ -73,7 +72,7 @@ class PokemonViewController: UIViewController {
     }
 }
 
-
+//MARK: -- DataSource Methods
 extension PokemonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredPokemonCards.count
@@ -97,6 +96,8 @@ extension PokemonViewController: UITableViewDataSource {
         return pokemonCell
     }
 }
+
+//MARK: -- Delegate Methods
 
 extension PokemonViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
