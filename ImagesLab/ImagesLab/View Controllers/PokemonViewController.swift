@@ -12,21 +12,52 @@ class PokemonViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var pokemonCard = [Card]() 
+    var pokemonCard = [Card]() {
+        didSet{
+            tableView.reloadData()
+        }
+    }
     
-    private func loadData() {
-        PokemonAPI.shared.fetchDataForAnyURL(url: "https://api.pokemontcg.io/v1/cards?contains=types")  { (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let data):
-                do {
-                    self.pokemonCard = try Pokemon.getPokemon(from: data)
-                    DispatchQueue.main.sync {
-                        self.tableView.reloadData()
-                    }
-                } catch {fatalError("\(error)")}
+//    private func loadData() {
+//        PokemonAPI.shared.fetchDataForAnyURL(url: "https://api.pokemontcg.io/v1/cards?contains=types")  { (result) in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let data):
+//                do {
+//                    self.pokemonCard = try Pokemon.getPokemon(from: data)
+//                    DispatchQueue.main.sync {
+//                        self.tableView.reloadData()
+//                    }
+//                } catch {fatalError("\(error)")}
+//            }
+//        }
+//    }
+    
+    private func loadData(){
+        Pokemon.getPokemonCardData { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let pokemonData):
+                    self.pokemonCard = pokemonData
+                }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifer = segue.identifier else {fatalError("No identifier in segue")}
+        
+        switch segueIdentifer {
+        case "segueToDetail":
+            guard let destVC = segue.destination as? detailPokemonViewController else { fatalError("Unexpected segue VC") }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else { fatalError("No row selected") }
+            let currentPokemonCard = pokemonCard[selectedIndexPath.row]
+            destVC.pokemonCard = currentPokemonCard
+        default:
+            fatalError("unexpected segue identifier")
         }
     }
     
@@ -46,9 +77,10 @@ extension PokemonViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentPokemonCard = pokemonCard[indexPath.row]
-        
         let pokemonCell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as! PokemonTableViewCell
+        
         pokemonCell.pokemonName.text = currentPokemonCard.name
+        pokemonCell.weaknessesLabel.text = currentPokemonCard.weaknesses?[0].type
         
         ImageHelper.shared.fetchImage(urlString: currentPokemonCard.imageURLHiRes) { (result) in
             DispatchQueue.main.async {

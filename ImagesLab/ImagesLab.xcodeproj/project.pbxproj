@@ -22,6 +22,7 @@
 		976F54E12323009300E305A1 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54E02323009300E305A1 /* Pokemon.swift */; };
 		976F54E32323068900E305A1 /* PokemonAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54E22323068900E305A1 /* PokemonAPIHelper.swift */; };
 		976F54E923234EA200E305A1 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54E823234EA200E305A1 /* ErrorHandling.swift */; };
+		976F54EC23236B6300E305A1 /* detailPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		976F54E02323009300E305A1 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		976F54E22323068900E305A1 /* PokemonAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPIHelper.swift; sourceTree = "<group>"; };
 		976F54E823234EA200E305A1 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailPokemonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,16 +98,16 @@
 		976F54B32322EF2800E305A1 /* ImagesLab */ = {
 			isa = PBXGroup;
 			children = (
-				976F54B42322EF2800E305A1 /* AppDelegate.swift */,
 				976F54EA23235F8F00E305A1 /* View Controllers */,
-				976F54DA2322F7CB00E305A1 /* ComicAPIHelper.swift */,
 				976F54B82322EF2800E305A1 /* Main.storyboard */,
-				976F54DC2322FB5800E305A1 /* PokemonTableViewCell.swift */,
 				976F54E22323068900E305A1 /* PokemonAPIHelper.swift */,
 				976F54E02323009300E305A1 /* Pokemon.swift */,
+				976F54DC2322FB5800E305A1 /* PokemonTableViewCell.swift */,
 				976F54D42322F48E00E305A1 /* AppError.swift */,
 				976F54D62322F4C400E305A1 /* NetworkManager.swift */,
 				976F54D82322F53700E305A1 /* ImageHelper.swift */,
+				976F54B42322EF2800E305A1 /* AppDelegate.swift */,
+				976F54DA2322F7CB00E305A1 /* ComicAPIHelper.swift */,
 				976F54BB2322EF2900E305A1 /* Assets.xcassets */,
 				976F54BD2322EF2900E305A1 /* LaunchScreen.storyboard */,
 				976F54C02322EF2900E305A1 /* Info.plist */,
@@ -127,6 +129,7 @@
 			children = (
 				976F54B62322EF2800E305A1 /* xkcdViewController.swift */,
 				976F54DE2322FB8000E305A1 /* PokemonViewController.swift */,
+				976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				976F54D72322F4C400E305A1 /* NetworkManager.swift in Sources */,
+				976F54EC23236B6300E305A1 /* detailPokemonViewController.swift in Sources */,
 				976F54DD2322FB5800E305A1 /* PokemonTableViewCell.swift in Sources */,
 				976F54D92322F53700E305A1 /* ImageHelper.swift in Sources */,
 				976F54DB2322F7CB00E305A1 /* ComicAPIHelper.swift in Sources */,
