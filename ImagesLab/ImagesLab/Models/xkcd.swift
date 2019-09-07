@@ -12,23 +12,19 @@ struct xkcdComic: Codable {
     let img: String
     let safe_title: String
     let num: Int
+    let mostRecentComic = "https://xkcd.com/info.0.json"
     
     init() { //Required so that the code can compile without the "cannot invoke initializer with no arguments" error
         img = String()
         safe_title = String()
         num = Int()
-        
-        enum CodingKeys: String, CodingKey {
-            case safeTitle = "safe_title"
-            case img
-            case num
-        }
     }
     
-    static func getxkcdComic(completionHandler: @escaping (Result<xkcdComic,AppError>) -> () ) {
-        let url = "https://xkcd.com/info.0.json"
+    static func getxkcdComic(ComicURL: String, completionHandler: @escaping (Result<xkcdComic,AppError>) -> () ) {
         
-        NetworkManager.shared.fetchData(urlString: url) { (result) in
+        //Reminder, this didn't initially work because you forgot to change the string passed in to the urlString parameter and instead you had it reading the most recent URL as opposed to ComicURL.
+        
+        NetworkManager.shared.fetchData(urlString: ComicURL) { (result) in
             switch result {
             case .failure(let error):
                 completionHandler(.failure(error))
@@ -42,8 +38,8 @@ struct xkcdComic: Codable {
         }
     }
     
-    func getSpecificComic(number: Int) -> String {
-        
+    func getASpecificComic(number: Int) -> String{
+        return "https://xkcd.com/\(number)/info.0.json"
     }
 }
 

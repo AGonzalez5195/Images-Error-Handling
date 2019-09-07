@@ -22,6 +22,7 @@
 		976F54E923234EA200E305A1 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54E823234EA200E305A1 /* ErrorHandling.swift */; };
 		976F54EC23236B6300E305A1 /* detailPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */; };
 		976F54EE23238C0800E305A1 /* xkcd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54ED23238C0800E305A1 /* xkcd.swift */; };
+		976F54F6232437AB00E305A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54F5232437AB00E305A1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		976F54E823234EA200E305A1 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailPokemonViewController.swift; sourceTree = "<group>"; };
 		976F54ED23238C0800E305A1 /* xkcd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcd.swift; sourceTree = "<group>"; };
+		976F54F5232437AB00E305A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				976F54F12323954200E305A1 /* Models */,
 				976F54F22323955500E305A1 /* Views */,
 				976F54B42322EF2800E305A1 /* AppDelegate.swift */,
+				976F54F5232437AB00E305A1 /* Extensions.swift */,
 				976F54BB2322EF2900E305A1 /* Assets.xcassets */,
 				976F54BD2322EF2900E305A1 /* LaunchScreen.storyboard */,
 				976F54C02322EF2900E305A1 /* Info.plist */,
@@ -255,6 +258,7 @@
 				976F54EE23238C0800E305A1 /* xkcd.swift in Sources */,
 				976F54B72322EF2800E305A1 /* xkcdViewController.swift in Sources */,
 				976F54E923234EA200E305A1 /* ErrorHandling.swift in Sources */,
+				976F54F6232437AB00E305A1 /* Extensions.swift in Sources */,
 				976F54E12323009300E305A1 /* Pokemon.swift in Sources */,
 				976F54B52322EF2800E305A1 /* AppDelegate.swift in Sources */,
 				976F54DF2322FB8000E305A1 /* PokemonViewController.swift in Sources */,

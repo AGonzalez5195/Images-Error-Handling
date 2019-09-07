@@ -38,7 +38,7 @@ class PokemonViewController: UIViewController {
         case "segueToDetail":
             guard let destVC = segue.destination as? detailPokemonViewController else { fatalError("Unexpected segue VC") }
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else { fatalError("No row selected") }
-            let currentPokemonCard = pokemonCards[selectedIndexPath.row]
+            let currentPokemonCard = filteredPokemonCards[selectedIndexPath.row]
             destVC.pokemonCard = currentPokemonCard
         default:
             fatalError("unexpected segue identifier")
