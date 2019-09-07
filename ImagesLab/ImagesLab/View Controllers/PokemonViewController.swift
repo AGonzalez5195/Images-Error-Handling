@@ -84,7 +84,7 @@ extension PokemonViewController: UITableViewDataSource {
         let currentPokemonCard = filteredPokemonCards[indexPath.row]
         let pokemonCell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as! PokemonTableViewCell
         
-        ImageHelper.shared.fetchImage(urlString: currentPokemonCard.imageURL) { (result) in
+        ImageHelper.shared.fetchImage(urlString: currentPokemonCard.imageURLHiRes) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
@@ -100,7 +100,7 @@ extension PokemonViewController: UITableViewDataSource {
 
 extension PokemonViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 240
+        return 500
     }
 }
 

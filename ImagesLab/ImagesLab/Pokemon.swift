@@ -33,29 +33,17 @@ struct Pokemon: Codable {
             }
         }
     }
-    
-    
-    //    static func getPokemon(from data: Data) throws -> [Card] {
-    //        do {
-    //            let PokemonData = try JSONDecoder().decode(Pokemon.self, from: data)
-    //            return PokemonData.cards
-    //        } catch {
-    //            throw JSONError.decodingError(error)
-    //        }
-    //    }
 }
 
 struct Card: Codable {
     let name: String
     let types: [String]
-    //    let nationalPokedexNumber: Int?
-    let imageURL, imageURLHiRes: String
+    let imageURLHiRes: String
     let weaknesses: [Weakness]?
     let set: String
     
     enum CodingKeys: String, CodingKey {
         case name
-        case imageURL = "imageUrl"
         case imageURLHiRes = "imageUrlHiRes"
         case weaknesses
         case set

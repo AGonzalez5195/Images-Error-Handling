@@ -23,6 +23,8 @@
 		976F54E32323068900E305A1 /* PokemonAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54E22323068900E305A1 /* PokemonAPIHelper.swift */; };
 		976F54E923234EA200E305A1 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54E823234EA200E305A1 /* ErrorHandling.swift */; };
 		976F54EC23236B6300E305A1 /* detailPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */; };
+		976F54EE23238C0800E305A1 /* xkcd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54ED23238C0800E305A1 /* xkcd.swift */; };
+		976F54F023238CE500E305A1 /* xkcdAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54EF23238CE500E305A1 /* xkcdAPIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		976F54E22323068900E305A1 /* PokemonAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPIHelper.swift; sourceTree = "<group>"; };
 		976F54E823234EA200E305A1 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailPokemonViewController.swift; sourceTree = "<group>"; };
+		976F54ED23238C0800E305A1 /* xkcd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcd.swift; sourceTree = "<group>"; };
+		976F54EF23238CE500E305A1 /* xkcdAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdAPIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 			children = (
 				976F54EA23235F8F00E305A1 /* View Controllers */,
 				976F54B82322EF2800E305A1 /* Main.storyboard */,
+				976F54ED23238C0800E305A1 /* xkcd.swift */,
+				976F54EF23238CE500E305A1 /* xkcdAPIHelper.swift */,
 				976F54E22323068900E305A1 /* PokemonAPIHelper.swift */,
 				976F54E02323009300E305A1 /* Pokemon.swift */,
 				976F54DC2322FB5800E305A1 /* PokemonTableViewCell.swift */,
@@ -239,9 +245,11 @@
 				976F54EC23236B6300E305A1 /* detailPokemonViewController.swift in Sources */,
 				976F54DD2322FB5800E305A1 /* PokemonTableViewCell.swift in Sources */,
 				976F54D92322F53700E305A1 /* ImageHelper.swift in Sources */,
+				976F54EE23238C0800E305A1 /* xkcd.swift in Sources */,
 				976F54DB2322F7CB00E305A1 /* ComicAPIHelper.swift in Sources */,
 				976F54E32323068900E305A1 /* PokemonAPIHelper.swift in Sources */,
 				976F54B72322EF2800E305A1 /* xkcdViewController.swift in Sources */,
+				976F54F023238CE500E305A1 /* xkcdAPIHelper.swift in Sources */,
 				976F54E923234EA200E305A1 /* ErrorHandling.swift in Sources */,
 				976F54E12323009300E305A1 /* Pokemon.swift in Sources */,
 				976F54B52322EF2800E305A1 /* AppDelegate.swift in Sources */,
