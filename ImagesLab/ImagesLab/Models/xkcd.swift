@@ -25,7 +25,7 @@ struct xkcdComic: Codable {
         }
     }
     
-    static func getXKCDData(completionHandler: @escaping (Result<xkcdComic,AppError>) -> () ) {
+    static func getxkcdComic(completionHandler: @escaping (Result<xkcdComic,AppError>) -> () ) {
         let url = "https://xkcd.com/info.0.json"
         
         NetworkManager.shared.fetchData(urlString: url) { (result) in
@@ -42,4 +42,15 @@ struct xkcdComic: Codable {
         }
     }
     
+    func getSpecificComic(number: Int) -> String {
+        
+    }
 }
+
+//What I want to do:
+//Take a user input from a textfield, make sure it's an int, and return the url with that string interpolated into the URL.
+//Take a range between 1 and the most recent comic number
+//When the user presses the randomize button, use a random element from within that range and interpolate it into the URL.
+//I need a function that can get a comic for any URL.
+
+

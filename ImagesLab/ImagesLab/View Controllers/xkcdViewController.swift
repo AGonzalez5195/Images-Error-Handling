@@ -24,13 +24,16 @@ class xkcdViewController: UIViewController {
     @IBAction func comicStepperPressed(_ sender: UIStepper) {
     }
     @IBAction func randomButtonPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func mostRecentButtonPressed(_ sender: UIButton) {
     }
     
+    
+    
     private func loadData(){
-        xkcdComic.getXKCDData { (result) in
+        xkcdComic.getxkcdComic { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
@@ -62,4 +65,5 @@ class xkcdViewController: UIViewController {
         setComicImage()
     }
 }
+
 
