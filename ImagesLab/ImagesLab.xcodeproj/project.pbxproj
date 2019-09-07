@@ -23,6 +23,9 @@
 		976F54EC23236B6300E305A1 /* detailPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */; };
 		976F54EE23238C0800E305A1 /* xkcd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54ED23238C0800E305A1 /* xkcd.swift */; };
 		976F54F6232437AB00E305A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54F5232437AB00E305A1 /* Extensions.swift */; };
+		976F54FA232473CD00E305A1 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54F9232473CD00E305A1 /* UsersTableViewCell.swift */; };
+		976F54FC2324744C00E305A1 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54FB2324744C00E305A1 /* UsersTableViewController.swift */; };
+		976F54FF2324760400E305A1 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54FE2324760400E305A1 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailPokemonViewController.swift; sourceTree = "<group>"; };
 		976F54ED23238C0800E305A1 /* xkcd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcd.swift; sourceTree = "<group>"; };
 		976F54F5232437AB00E305A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		976F54F9232473CD00E305A1 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		976F54FB2324744C00E305A1 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		976F54FE2324760400E305A1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +85,6 @@
 		976F54A82322EF2800E305A1 = {
 			isa = PBXGroup;
 			children = (
-				976F54E823234EA200E305A1 /* ErrorHandling.swift */,
 				976F54B32322EF2800E305A1 /* ImagesLab */,
 				976F54C82322EF2900E305A1 /* ImagesLabTests */,
 				976F54B22322EF2800E305A1 /* Products */,
@@ -125,7 +130,8 @@
 			children = (
 				976F54B62322EF2800E305A1 /* xkcdViewController.swift */,
 				976F54DE2322FB8000E305A1 /* PokemonViewController.swift */,
-				976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */,
+				976F54FB2324744C00E305A1 /* UsersTableViewController.swift */,
+				976F54FD2324758200E305A1 /* detailViewControllers */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -135,9 +141,11 @@
 			children = (
 				976F54ED23238C0800E305A1 /* xkcd.swift */,
 				976F54E02323009300E305A1 /* Pokemon.swift */,
+				976F54FE2324760400E305A1 /* Users.swift */,
 				976F54D42322F48E00E305A1 /* AppError.swift */,
 				976F54D62322F4C400E305A1 /* NetworkManager.swift */,
 				976F54D82322F53700E305A1 /* ImageHelper.swift */,
+				976F54E823234EA200E305A1 /* ErrorHandling.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,8 +154,17 @@
 			isa = PBXGroup;
 			children = (
 				976F54DC2322FB5800E305A1 /* PokemonTableViewCell.swift */,
+				976F54F9232473CD00E305A1 /* UsersTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		976F54FD2324758200E305A1 /* detailViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */,
+			);
+			path = detailViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,10 +275,13 @@
 				976F54EE23238C0800E305A1 /* xkcd.swift in Sources */,
 				976F54B72322EF2800E305A1 /* xkcdViewController.swift in Sources */,
 				976F54E923234EA200E305A1 /* ErrorHandling.swift in Sources */,
+				976F54FF2324760400E305A1 /* Users.swift in Sources */,
 				976F54F6232437AB00E305A1 /* Extensions.swift in Sources */,
 				976F54E12323009300E305A1 /* Pokemon.swift in Sources */,
+				976F54FA232473CD00E305A1 /* UsersTableViewCell.swift in Sources */,
 				976F54B52322EF2800E305A1 /* AppDelegate.swift in Sources */,
 				976F54DF2322FB8000E305A1 /* PokemonViewController.swift in Sources */,
+				976F54FC2324744C00E305A1 /* UsersTableViewController.swift in Sources */,
 				976F54D52322F48E00E305A1 /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
