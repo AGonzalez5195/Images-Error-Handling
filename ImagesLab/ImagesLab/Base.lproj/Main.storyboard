@@ -111,18 +111,10 @@
                                                     <rect key="frame" x="135" y="5" width="144" height="228"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJV-zb-2Eu">
-                                                    <rect key="frame" x="7" y="109" width="120" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="pokemonCardImage" destination="wzC-Wa-OOS" id="Chy-bx-7tm"/>
-                                            <outlet property="pokemonName" destination="mJV-zb-2Eu" id="vrt-gr-ds7"/>
                                             <segue destination="hj8-jc-dhi" kind="show" identifier="segueToDetail" id="5uH-4N-QaP"/>
                                         </connections>
                                     </tableViewCell>
@@ -148,6 +140,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gU2-dt-yni"/>
                     <connections>
+                        <outlet property="searchBar" destination="eSm-NJ-lwv" id="xOq-eQ-8x1"/>
                         <outlet property="tableView" destination="fnG-ty-WWy" id="BXZ-4D-2qN"/>
                     </connections>
                 </viewController>
@@ -184,7 +177,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbS-2K-ZNH">
                                 <rect key="frame" x="38" y="772" width="338" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

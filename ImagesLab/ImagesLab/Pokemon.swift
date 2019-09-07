@@ -71,6 +71,10 @@ struct Card: Codable {
     func displayPokemonWeakness(card: Card) -> String {
         return "Weakness: \(card.weaknesses?[0].type ?? "None")"
     }
+    
+    static func getFilteredCards(arr: [Card], searchString: String) -> [Card] {
+        return arr.filter{$0.name.lowercased().contains(searchString.lowercased())}
+    }
 }
 
 
