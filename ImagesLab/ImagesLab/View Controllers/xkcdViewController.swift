@@ -21,7 +21,7 @@ class xkcdViewController: UIViewController {
     //MARK: -- Properties
     var currentxkcdComic: xkcdComic! {
         didSet {
-            setStepperValues(numberValue: Double(currentxkcdComic!.num))
+            setStepperValues(numberValue: currentxkcdComic!.num)
             loadCurrentComicImage()
             updateTextFieldPlaceHolderAndLabel()
         }
@@ -53,16 +53,19 @@ class xkcdViewController: UIViewController {
                 case .success(let xkcdComicData):
                     self.currentxkcdComic = xkcdComicData
                     self.mostRecentXKCDComicNumberValue = xkcdComicData.num
-                    self.setStepperValues(numberValue: Double(self.mostRecentXKCDComicNumberValue))
+                    self.setStepperValues(numberValue: self.mostRecentXKCDComicNumberValue)
                 }
             }
         }
     }
     
-    private func setStepperValues(numberValue: Double) {
+    private func setStepperValues(numberValue: Int){
+        let newStepperValue = Double(numberValue)
         self.comicStepper.maximumValue = Double(mostRecentXKCDComicNumberValue)
-        self.comicStepper.value = numberValue
+        self.comicStepper.value = newStepperValue
         self.comicStepper.stepValue = 1
+       
+        
     }
     private func getRandomComic() {
         let newComicURL = xkcdComic().getASpecificComic(number: Int.random(in: 1...mostRecentXKCDComicNumberValue))
