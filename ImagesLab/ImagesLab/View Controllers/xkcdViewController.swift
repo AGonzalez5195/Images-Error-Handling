@@ -21,7 +21,7 @@ class xkcdViewController: UIViewController {
     //MARK: -- Properties
     var currentxkcdComic: xkcdComic! {
         didSet {
-            comicStepper.value = Double(currentxkcdComic.num)
+            setStepperValues(numberValue: Double(currentxkcdComic!.num))
             loadCurrentComicImage()
             updateTextFieldPlaceHolderAndLabel()
         }
@@ -60,7 +60,7 @@ class xkcdViewController: UIViewController {
     }
     
     private func setStepperValues(numberValue: Double) {
-        self.comicStepper.maximumValue = numberValue
+        self.comicStepper.maximumValue = Double(mostRecentXKCDComicNumberValue)
         self.comicStepper.value = numberValue
         self.comicStepper.stepValue = 1
     }
