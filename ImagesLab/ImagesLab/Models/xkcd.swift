@@ -42,8 +42,4 @@ struct xkcdComic: Codable {
     func getASpecificComic(number: Int) -> String{
         return "https://xkcd.com/\(number)/info.0.json"
     }
-    
-    func getASpecificComicFromStepper(number:Double) -> String {
-        return "https://xkcd.com/\(Int(number))/info.0.json"
-    }
 }

@@ -31,7 +31,7 @@ class xkcdViewController: UIViewController {
     
     //MARK: -- IBActions
     @IBAction func comicStepperPressed(_ sender: UIStepper) {
-        let newComicURLFromStepper = xkcdComic().getASpecificComicFromStepper(number: sender.value)
+        let newComicURLFromStepper = xkcdComic().getASpecificComic(number: Int(sender.value))
         updateCurrentComicData(newComicURL: newComicURLFromStepper)
     }
     
