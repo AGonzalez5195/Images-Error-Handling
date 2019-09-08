@@ -13,7 +13,6 @@ struct xkcdComic: Codable {
     let num: Int
     let safe_title: String
     let mostRecentComic = "https://xkcd.com/info.0.json"
-    let comicWithEditableNumber = "https://xkcd.com/1/info.0.json"
     
     init() { //Required so that the code can compile without the "cannot invoke initializer with no arguments" error
         img = String()
