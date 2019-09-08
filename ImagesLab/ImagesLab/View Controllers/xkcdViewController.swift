@@ -42,6 +42,14 @@ class xkcdViewController: UIViewController {
     //MARK: -- Functions
     @IBAction func mostRecentButtonPressed(_ sender: UIButton) {
         loadMostRecentComic()
+        if currentxkcdComic.num == mostRecentXKCDComicNumberValue {
+            let alertVC = UIAlertController(title: "Error",
+                                            message: "You are already viewing the latest comic!", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "Sorry, I dropped out of 1st grade",
+                                            style: .default,
+                                            handler: nil))
+            self.present(alertVC, animated: true, completion: nil)
+        }
     }
     
     private func loadMostRecentComic(){
@@ -97,7 +105,7 @@ class xkcdViewController: UIViewController {
         self.comicStepper.value = newStepperValue
         self.comicStepper.stepValue = 1
     }
-   
+    
     private func updateTextFieldPlaceHolderAndLabel(){
         comicTextField.placeholder = "\(currentxkcdComic.num): \(currentxkcdComic.safe_title)"
         comicTextField.text = ""
