@@ -71,7 +71,7 @@ class UsersTableViewController: UITableViewController {
                     print(error)
                 case .success(let userData):
                     self.users = userData
-                   self.users = sortByNameAscending(userArrayToSort: self.users)
+                    self.users = userResults.getSortedArray(arr: self.users)
                 }
             }
         }

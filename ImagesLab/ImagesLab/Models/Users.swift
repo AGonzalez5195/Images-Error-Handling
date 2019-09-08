@@ -38,6 +38,11 @@ struct userResults: Codable {
     let picture: pictureWrapper
     
     
+    static func getSortedArray(arr: [userResults]) -> [userResults] {
+        let sortedArr = arr.sorted{$0.getFullName() < $1.getFullName()}
+        return sortedArr
+    }
+    
     func getFullName() -> String {
         let firstName = name.first.capitalized
         let lastName = name.last.capitalized

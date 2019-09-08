@@ -19,6 +19,7 @@ struct xkcdComic: Codable {
         num = Int()
         safe_title = String()
     }
+    
     //CodingKeys enum doesn't work with an init?
     
     static func getxkcdComic(ComicURL: String, completionHandler: @escaping (Result<xkcdComic,AppError>) -> () ) {

@@ -50,11 +50,11 @@ struct Card: Codable {
         case types
     }
     
-    static func sortByNameAscending(arr: [Card]) -> [Card] {
-        var newArr = arr
-        newArr = arr.sorted(by: {$0.name < $1.name})
-        return newArr
+    static func getSortedArray(arr: [Card]) -> [Card] {
+        let sortedArr = arr.sorted{$0.name < $1.name}
+        return sortedArr
     }
+  
     
     func displayPokemonWeakness(card: Card) -> String {
         return "Weakness: \(card.weaknesses?[0].type ?? "None")"

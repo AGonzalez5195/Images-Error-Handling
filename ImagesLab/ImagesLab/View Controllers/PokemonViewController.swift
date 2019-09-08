@@ -53,7 +53,7 @@ class PokemonViewController: UIViewController {
                     print(error)
                 case .success(let pokemonData):
                     self.pokemonCards = pokemonData
-                    self.pokemonCards = Card.sortByNameAscending(arr: self.pokemonCards)
+                    self.pokemonCards = Card.getSortedArray(arr: self.pokemonCards)
                 }
             }
         }
