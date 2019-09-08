@@ -19,7 +19,7 @@ class xkcdViewController: UIViewController {
     @IBOutlet weak var randomButton: UIButton!
     
     //MARK: -- Properties
-    var currentxkcdComic = xkcdComic() {
+    var currentxkcdComic: xkcdComic! {
         didSet {
             comicStepper.value = Double(currentxkcdComic.num)
             loadCurrentComicImage()
@@ -33,12 +33,10 @@ class xkcdViewController: UIViewController {
     @IBAction func comicStepperPressed(_ sender: UIStepper) {
         let newComicURLFromStepper = xkcdComic().getASpecificComicFromStepper(number: sender.value)
         changeCurrentComic(newComicURL: newComicURLFromStepper)
-        print(newComicURLFromStepper)
     }
     
     @IBAction func randomButtonPressed(_ sender: UIButton) {
-        let newComicURL = xkcdComic().getASpecificComic(number: Int.random(in: 1...mostRecentXKCDComicNumberValue))
-        changeCurrentComic(newComicURL: newComicURL)
+        getRandomComic()
     }
     
     //MARK: -- Functions
@@ -63,6 +61,10 @@ class xkcdViewController: UIViewController {
         }
     }
     
+    private func getRandomComic() {
+        let newComicURL = xkcdComic().getASpecificComic(number: Int.random(in: 1...mostRecentXKCDComicNumberValue))
+        changeCurrentComic(newComicURL: newComicURL)
+    }
     private func changeCurrentComic(newComicURL: String){
         xkcdComic.getxkcdComic(ComicURL: newComicURL ) { (result) in
             DispatchQueue.main.async {
@@ -102,12 +104,12 @@ class xkcdViewController: UIViewController {
     
     private func prettifyUI() {
         comicStepper.tintColor = .black
-        randomButton.layer.cornerRadius = 3
+        randomButton.layer.cornerRadius = 5
         randomButton.layer.borderColor = UIColor.black.cgColor
         randomButton.layer.borderWidth = 1.0
         
         
-        recentButton.layer.cornerRadius = 3
+        recentButton.layer.cornerRadius = 5
         recentButton.layer.borderColor = UIColor.black.cgColor
         recentButton.layer.borderWidth = 1.0
     }

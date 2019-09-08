@@ -17,7 +17,6 @@ class detailUsersViewController: UIViewController {
     
     var currentUser: userResults!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelText()

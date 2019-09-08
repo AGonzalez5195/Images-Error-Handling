@@ -210,9 +210,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="faC-YJ-Gnz"/>
                         <segue destination="6OM-Bb-3Ju" kind="relationship" relationship="viewControllers" id="JP3-J1-vME"/>
                         <segue destination="1Ze-Zm-Y5J" kind="relationship" relationship="viewControllers" id="K60-9t-Jd4"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="faC-YJ-Gnz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSF-Lf-Wfv" userLabel="First Responder" sceneMemberID="firstResponder"/>

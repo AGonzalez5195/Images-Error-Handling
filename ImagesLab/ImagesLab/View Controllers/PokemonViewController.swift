@@ -110,26 +110,3 @@ extension PokemonViewController: UISearchBarDelegate {
         searchString = searchText
     }
 }
-
-
-
-
-
-
-
-
-//    private func loadData() {
-//        PokemonAPI.shared.fetchDataForAnyURL(url: "https://api.pokemontcg.io/v1/cards?contains=types")  { (result) in
-//            switch result {
-//            case .failure(let error):
-//                print(error)
-//            case .success(let data):
-//                do {
-//                    self.pokemonCard = try Pokemon.getPokemon(from: data)
-//                    DispatchQueue.main.sync {
-//                        self.tableView.reloadData()
-//                    }
-//                } catch {fatalError("\(error)")}
-//            }
-//        }
-//    }
