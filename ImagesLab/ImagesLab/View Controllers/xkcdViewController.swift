@@ -149,7 +149,7 @@ extension xkcdViewController: UITextFieldDelegate {
         if let userEnteredXKCDNum = textField.text?.toInt() {
             if userEnteredXKCDNum > mostRecentXKCDComicNumberValue || userEnteredXKCDNum == 0  {
                 let alertVC = UIAlertController(title: "Error",
-                                                message: "The comic number you have entered does not exist.", preferredStyle: .alert)
+                                                message: "Comic #\(textField.text!) does not exist. Enter a number between 1 and \(mostRecentXKCDComicNumberValue).", preferredStyle: .alert)
                 alertVC.addAction(UIAlertAction(title: "Sorry, I'm dumb",
                                                 style: .default,
                                                 handler: nil))
