@@ -11,7 +11,7 @@ import UIKit
 class UsersTableViewController: UITableViewController {
 
     
-    var users = [userResults]() {
+    var users = [User]() {
         didSet{
             tableView.reloadData()
         }
@@ -71,7 +71,7 @@ class UsersTableViewController: UITableViewController {
                     print(error)
                 case .success(let userData):
                     self.users = userData
-                    self.users = userResults.getSortedArray(arr: self.users)
+                    self.users = User.getSortedArray(arr: self.users)
                 }
             }
         }

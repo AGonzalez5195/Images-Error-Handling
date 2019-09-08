@@ -15,7 +15,7 @@ class detailUsersViewController: UIViewController {
     @IBOutlet weak var dobLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     
-    var currentUser: userResults!
+    var currentUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()

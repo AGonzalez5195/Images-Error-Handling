@@ -9,9 +9,9 @@
 import Foundation
 
 struct usersModel: Codable {
-    let results: [userResults]
+    let results: [User]
     
-    static func getUserData(completionHandler: @escaping (Result<[userResults],AppError>) -> () ) {
+    static func getUserData(completionHandler: @escaping (Result<[User],AppError>) -> () ) {
         let url = "https://randomuser.me/api/?results=100"
         
         NetworkManager.shared.fetchData(urlString: url) { (result) in
@@ -29,16 +29,16 @@ struct usersModel: Codable {
     }
 }
 
-struct userResults: Codable {
-    let name: userNameWrapper
-    let location: locationWrapper
+struct User: Codable {
+    let name: Name
+    let location: Location
     let phone: String
     let cell: String
-    var dob: dobWrapper
-    let picture: pictureWrapper
+    var dob: DoB
+    let picture: Picture
     
     
-    static func getSortedArray(arr: [userResults]) -> [userResults] {
+    static func getSortedArray(arr: [User]) -> [User] {
         let sortedArr = arr.sorted{$0.getFullName() < $1.getFullName()}
         return sortedArr
     }
@@ -59,22 +59,22 @@ struct userResults: Codable {
     }
 }
 
-struct userNameWrapper: Codable {
+struct Name: Codable {
     let first: String
     let last: String
 }
 
-struct locationWrapper: Codable {
+struct Location: Codable {
     let street: String
     let city: String
     let state: String
 }
 
-struct dobWrapper: Codable {
+struct DoB: Codable {
     let age: Int
 }
 
-struct pictureWrapper: Codable {
+struct Picture: Codable {
     let large: String
 }
 
