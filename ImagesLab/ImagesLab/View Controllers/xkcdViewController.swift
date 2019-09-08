@@ -59,14 +59,6 @@ class xkcdViewController: UIViewController {
         }
     }
     
-    private func setStepperValues(numberValue: Int){
-        let newStepperValue = Double(numberValue)
-        self.comicStepper.maximumValue = Double(mostRecentXKCDComicNumberValue)
-        self.comicStepper.value = newStepperValue
-        self.comicStepper.stepValue = 1
-       
-        
-    }
     private func getRandomComic() {
         let newComicURL = xkcdComic().getASpecificComic(number: Int.random(in: 1...mostRecentXKCDComicNumberValue))
         updateCurrentComicData(newComicURL: newComicURL)
@@ -99,7 +91,13 @@ class xkcdViewController: UIViewController {
         }
     }
     
-    
+    private func setStepperValues(numberValue: Int){
+        let newStepperValue = Double(numberValue)
+        self.comicStepper.maximumValue = Double(mostRecentXKCDComicNumberValue)
+        self.comicStepper.value = newStepperValue
+        self.comicStepper.stepValue = 1
+    }
+   
     private func updateTextFieldPlaceHolderAndLabel(){
         comicTextField.placeholder = "\(currentxkcdComic.num): \(currentxkcdComic.safe_title)"
         comicTextField.text = ""
@@ -112,10 +110,10 @@ class xkcdViewController: UIViewController {
     
     private func prettifyUI() {
         comicStepper.tintColor = .black
+        
         randomButton.layer.cornerRadius = 5
         randomButton.layer.borderColor = UIColor.black.cgColor
         randomButton.layer.borderWidth = 1.0
-        
         
         recentButton.layer.cornerRadius = 5
         recentButton.layer.borderColor = UIColor.black.cgColor
