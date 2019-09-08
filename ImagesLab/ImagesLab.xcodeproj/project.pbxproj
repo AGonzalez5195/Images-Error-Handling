@@ -26,6 +26,7 @@
 		976F54FA232473CD00E305A1 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54F9232473CD00E305A1 /* UsersTableViewCell.swift */; };
 		976F54FC2324744C00E305A1 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54FB2324744C00E305A1 /* UsersTableViewController.swift */; };
 		976F54FF2324760400E305A1 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F54FE2324760400E305A1 /* Users.swift */; };
+		976F550123247B7000E305A1 /* detailUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F550023247B7000E305A1 /* detailUsersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		976F54F9232473CD00E305A1 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		976F54FB2324744C00E305A1 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		976F54FE2324760400E305A1 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		976F550023247B7000E305A1 /* detailUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailUsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				976F54EB23236B6300E305A1 /* detailPokemonViewController.swift */,
+				976F550023247B7000E305A1 /* detailUsersViewController.swift */,
 			);
 			path = detailViewControllers;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				976F54B52322EF2800E305A1 /* AppDelegate.swift in Sources */,
 				976F54DF2322FB8000E305A1 /* PokemonViewController.swift in Sources */,
 				976F54FC2324744C00E305A1 /* UsersTableViewController.swift in Sources */,
+				976F550123247B7000E305A1 /* detailUsersViewController.swift in Sources */,
 				976F54D52322F48E00E305A1 /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,11 +16,6 @@ class UsersTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadData()
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
@@ -53,6 +48,21 @@ class UsersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifer = segue.identifier else {fatalError("No identifier in segue")}
+        
+        switch segueIdentifer {
+        case "segueToDetail":
+            guard let destVC = segue.destination as? detailUsersViewController else { fatalError("Unexpected segue VC") }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else { fatalError("No row selected") }
+            let currentUser = users[selectedIndexPath.row]
+            destVC.currentUser = currentUser
+        default:
+            fatalError("unexpected segue identifier")
+        }
+    }
+    
     private func loadData(){
         usersModel.getUserData { (result) in
             DispatchQueue.main.async {
@@ -65,5 +75,10 @@ class UsersTableViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadData()
     }
 }

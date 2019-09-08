@@ -36,7 +36,6 @@ struct userResults: Codable {
     let cell: String
     var dob: dobWrapper
     let picture: pictureWrapper
-    let email: String
     
     
     func getFullName() -> String {
@@ -67,7 +66,6 @@ struct locationWrapper: Codable {
 }
 
 struct dobWrapper: Codable {
-    var date: String
     let age: Int
 }
 
